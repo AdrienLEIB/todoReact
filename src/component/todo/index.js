@@ -7,9 +7,14 @@ const Todo = (props) =>{
     const [name, setName] = useState('');
 
     const addTodo = (event) =>{
-        const newTodo = {"name": name, "id": uuidv4()}
-        setTodo([...todoList, newTodo]);
-        setName('');
+        event.preventDefault();
+        if (!name) {
+            alert('Le nom ne doit pas être vide')
+          } else {
+            const newTodo = {"name": name, "id": uuidv4()}
+            setTodo([...todoList, newTodo]);
+            setName('');
+          }
 
     }
 

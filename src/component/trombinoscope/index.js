@@ -8,20 +8,24 @@ const Trombinoscope = (props) =>{
     const axios = require('axios');
 
      /* Hugo-Jean EGU */
-    // useEffect( () => {
-    //     axios.get('http://hp-api.herokuapp.com/api/characters').then(res => {
-    //         setTrombinoscope(res.data)
-    //     })
+    useEffect( () => {
+        axios.get('http://hp-api.herokuapp.com/api/characters')
+        .then(res => {
+            setTrombinoscope(res.data)
+        })
+        .catch(err => {
+            console.log(err);
+        })
 
-    // }, [])
+    }, [])
 
     /* Adrien LEIB */
-    useEffect( async () => {
-        const newTrombinoscope = await axios.get('http://hp-api.herokuapp.com/api/characters')
-        setTrombinoscope(newTrombinoscope.data);
+    // useEffect( async () => {
+    //     const newTrombinoscope = await axios.get('http://hp-api.herokuapp.com/api/characters')
+    //     setTrombinoscope(newTrombinoscope.data);
 
-    }, []
-    );
+    // }, []
+    // );
 
 
     
